@@ -1,0 +1,26 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "es6": true,
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "no-restricted-syntax": [
+            "error",
+            "LabeledStatement",
+            "WithStatement"
+        ],
+        "no-param-reassign": 0,
+        "no-plusplus": 0,
+        "no-console": 0,
+        "no-unused-expressions": "off",
+        "object-curly-newline": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ]
+    }
+}
