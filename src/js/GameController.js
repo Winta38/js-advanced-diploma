@@ -1,32 +1,31 @@
 // импорт тем
-import themes from './themes.js';
+import themes from './themes';
 
 // импорт курсоров
-import cursors from './cursors.js';
+import cursors from './cursors';
 
 // взаимодействие с HTML-страницей
-import GamePlay from './GamePlay.js';
+import GamePlay from './GamePlay';
 
 // текущее состояние игры
-import GameState from './GameState.js';
+import GameState from './GameState';
 
 // генерация команд и персонажей
-import { generateTeam } from './generators.js';
+import { generateTeam } from './generators';
 
-//класс для команды
-import Team from './Team.js';
+// класс для команды
+import Team from './Team';
 
-//позиция на игровом поле
-import PositionedCharacter from './PositionedCharacter.js';
+// позиция на игровом поле
+import PositionedCharacter from './PositionedCharacter';
 
 // импорт персонажей
-import Bowman from './Characters/Bowman.js';
-import Swordsman from './Characters/Swordsman.js';
-import Daemon from './Characters/Daemon.js';
-import Undead from './Characters/Undead.js';
-import Vampire from './Characters/Vampire.js';
-import Magician from './Characters/Magician.js';
-
+import Bowman from './Characters/Bowman';
+import Swordsman from './Characters/Swordsman';
+import Daemon from './Characters/Daemon';
+import Undead from './Characters/Undead';
+import Vampire from './Characters/Vampire';
+import Magician from './Characters/Magician';
 
 export default class GameController {
   constructor(gamePlay, stateService) {
@@ -38,7 +37,6 @@ export default class GameController {
     this.botCharacters = [Daemon, Undead, Vampire];
     this.gameState = new GameState();
   }
-
 
   init() {
     // TODO: add event listeners to gamePlay events
@@ -63,7 +61,6 @@ export default class GameController {
     */
 
   onCellClick(index) {
-
     if (this.gameState.level === 5 || this.playerTeam.members.size === 0) {
       return;
     }
@@ -289,7 +286,7 @@ export default class GameController {
     if (this.botTeam.members.size === 0 && this.gameState.level <= 3) {
       this.gameState.isPlayerTurn = true;
       this.scoringPoints();
-      GamePlay.showMessage(`Вы прошли уровень ${this.gameState.level} Количество набранных очков: ${this.gameState.points}`);
+      GamePlay.showMessage(`Вы прошли уровень ${this.gameState.level} Набрано очков: ${this.gameState.points}`);
       this.gameState.level += 1;
       this.getLevelUp();
     }

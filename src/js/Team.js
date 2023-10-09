@@ -35,7 +35,7 @@ export default class Team {
     return [...this.members];
   }
 
-  *[Symbol.iterator]() {
+  * [Symbol.iterator]() {
     for (const person of this.members) {
       yield person;
     }
