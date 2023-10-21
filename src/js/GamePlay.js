@@ -1,4 +1,4 @@
-import { calcHealthLevel, calcTileType } from './utils';
+import { calcHealthLevel, calcTileType } from './utils.js';
 
 export default class GamePlay {
   constructor() {
@@ -177,13 +177,15 @@ export default class GamePlay {
     this.loadGameListeners.forEach((o) => o.call(null));
   }
 
-  // static showError(message) {
-  //   alert(message);
-  // }
+  static showError(message) {
+    // eslint-disable-next-line no-alert
+    alert(message);
+  }
 
-  // static showMessage(message) {
-  //   alert(message);
-  // }
+  static showMessage(message) {
+    // eslint-disable-next-line no-alert
+    alert(message);
+  }
 
   selectCell(index, color = 'yellow') {
     this.deselectCell(index);
