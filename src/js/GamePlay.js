@@ -1,4 +1,4 @@
-import { calcHealthLevel, calcTileType } from './utils.js';
+import { calcHealthLevel, calcTileType } from './utils';
 
 export default class GamePlay {
   constructor() {
@@ -178,12 +178,10 @@ export default class GamePlay {
   }
 
   static showError(message) {
-    // eslint-disable-next-line no-alert
     alert(message);
   }
 
   static showMessage(message) {
-    // eslint-disable-next-line no-alert
     alert(message);
   }
 
